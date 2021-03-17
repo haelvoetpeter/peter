@@ -38,7 +38,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "relativePath": "deployStorageAccount.json"
+          "relativePath": "https://github.com/haelvoetpeter/peter/blob/master/CreateWebapp/deployStorageAccount.json"
         },
         "parameters": {
           "storageAccountName": {

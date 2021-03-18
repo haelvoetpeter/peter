@@ -6,7 +6,6 @@
       "type": "string",
       "minLength": 3,
       "maxLength": 11,
-	    "defaultValue": "jeffproject",
       "metadata": {
         "description": "Specify a project name that is used to generate resource names."
       }
@@ -39,7 +38,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "https://github.com/haelvoetpeter/peter/blob/master/CreateWebapp/deployStorageAccount.json"
+          "relativePath": "linkedStorageAccount.json"
         },
         "parameters": {
           "storageAccountName": {

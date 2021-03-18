@@ -19,6 +19,6 @@ steps:
     resourceGroupName: 'peter9rg'
     location: 'West Europe'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://github.com/haelvoetpeter/peter/blob/master/CreateWebapp/main.json'
+    csmFileLink: 'https://github.com/haelvoetpeter/peter/blob/master/CreateWebapp/azuredeploy.json'
     overrideParameters: '-projectName petertest'
     deploymentMode: 'Incremental'

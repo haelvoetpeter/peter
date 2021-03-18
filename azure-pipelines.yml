@@ -22,3 +22,5 @@ steps:
     csmFileLink: 'https://github.com/haelvoetpeter/peter/blob/master/CreateWebapp/azuredeploy.json'
     overrideParameters: '-projectName petertest'
     deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
+    

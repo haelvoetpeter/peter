@@ -10,3 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'ITOPS-Test (d1cdb2f3-d4f5-4429-8e39-d6a919b93ffb)'
+    subscriptionId: 'd1cdb2f3-d4f5-4429-8e39-d6a919b93ffb'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'peter9rg'
+    location: 'West Europe'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://github.com/haelvoetpeter/peter/blob/master/CreateWebapp/main.json'
+    overrideParameters: '-projectName petertest'
+    deploymentMode: 'Incremental'

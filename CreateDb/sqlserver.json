@@ -1,0 +1,42 @@
+{
+ // "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "sqlserverName": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Sql/servers",
+      "apiVersion": "2020-02-02-preview",
+      "name": "[parameters('sqlserverName')]",
+      "location": "westeurope",
+      "kind": "v12.0",
+      "properties": {
+        "administratorLogin": "agivazure",
+        "administratorLoginPassword": "WatMoetDitWorden?",
+        "version": "12.0",
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Sql/servers/administrators",
+      "apiVersion": "2020-02-02-preview",
+      "name": "[concat(parameters('sqlserverName'), '/ActiveDirectory')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', parameters('sqlserverName'))]"
+      ],
+      "properties": {
+        "administratorType": "ActiveDirectory",
+        // wijzigen naar ad group ???
+        "login": "Peter.Haelvoet@kb.vlaanderen.be",
+        "sid": "ba971ac0-676b-47c4-a8b0-e5027c805e8d",
+        "tenantId": "834d6985-72c6-486a-b1d5-5758cf0a293c"
+      }
+    }
+  ],
+  "outputs": {}
+}

@@ -16,7 +16,7 @@ steps:
     ScriptType: 'InlineScript'
     Inline: |
       Get-Modules az -ListAvailable
-      bicep --version
+      bicep --version 1.0.0.
       $env:PSModulePath.ToString().Split(";") | Get-ChildItem | Where-Object -Property Name -Like "az.*" | Group-Object | Select-Object Name, count
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:

@@ -10,14 +10,14 @@ pool:
   vmImage: windows-latest
 
 steps:
-- task: AzurePowerShell@5
-  inputs:
-    azureSubscription: 'ITOPS-Test (d1cdb2f3-d4f5-4429-8e39-d6a919b93ffb)'
-    ScriptType: 'InlineScript'
-    Inline: |
-      Get-Modules az -ListAvailable
-      bicep --version 1.0.0.
-      $env:PSModulePath.ToString().Split(";") | Get-ChildItem | Where-Object -Property Name -Like "az.*" | Group-Object | Select-Object Name, count
+#- task: AzurePowerShell@5
+#  inputs:
+#    azureSubscription: 'ITOPS-Test (d1cdb2f3-d4f5-4429-8e39-d6a919b93ffb)'
+#    ScriptType: 'InlineScript'
+#    Inline: |
+#      Get-Modules az -ListAvailable
+#      bicep --version
+#      $env:PSModulePath.ToString().Split(";") | Get-ChildItem | Where-Object -Property Name -Like "az.*" | Group-Object | Select-Object Name, count
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
